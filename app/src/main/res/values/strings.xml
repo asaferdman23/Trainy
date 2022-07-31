@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Trainy</string>
+    <string name="welcome">Hi and welcome to Trainy!</string>
+    <string name="coach_or_trainer">So, are you a coach or a trainer?</string>
+    <string name="im_coach">3... 2... 1... GO! Coach</string>
+    <string name="im_trainer">Efficient my gains! Trainer</string>
+    <string name="whats_up_coach">So coach, what\'s up?</string>
+    <string name="whats_up_trainer">So trainer, what\'s up?</string>
+    <string name="know_you">Let\'s get to know you :)</string>
+    <string name="name">What\'s your name?</string>
+    <string name="email">eMail account?</string>
+    <string name="password">Password to keep you safe?</string>
+    <string name="register">Sign me up!</string>
+</resources>
