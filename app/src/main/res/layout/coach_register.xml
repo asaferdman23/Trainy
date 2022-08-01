@@ -44,6 +44,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.284"
+        android:textColorHint="@color/black"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -52,12 +53,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="45dp"
         android:hint="@string/email"
+        android:textColorHint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/coach_name_box"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.37"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -66,24 +68,27 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
         android:hint="@string/password"
+        android:textColorHint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/coach_email_box"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/coach_sign_up"
-        android:backgroundTint="@color/light_orange"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/light_orange"
         android:text="@string/register"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/coach_password_box"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.84"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

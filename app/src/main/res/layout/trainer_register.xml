@@ -12,12 +12,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/whats_up_trainer"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.106"
+        app:layout_constraintVertical_bias="0.129"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -25,12 +25,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/know_you"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.134"
+        app:layout_constraintVertical_bias="0.155"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -40,10 +40,11 @@
         android:hint="@string/name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.297"
+        app:layout_constraintVertical_bias="0.284"
+        android:textColorHint="@color/black"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -52,12 +53,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="45dp"
         android:hint="@string/email"
+        android:textColorHint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.544"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/trainer_name_box"
-        app:layout_constraintVertical_bias="0.048"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.37"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -66,12 +68,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
         android:hint="@string/password"
+        android:textColorHint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/trainer_email_box"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -82,9 +85,10 @@
         android:text="@string/register"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/trainer_password_box"
-        app:layout_constraintVertical_bias="0.279"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.84"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

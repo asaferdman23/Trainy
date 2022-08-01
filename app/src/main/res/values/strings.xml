@@ -8,7 +8,7 @@
     <string name="whats_up_trainer">So trainer, what\'s up?</string>
     <string name="know_you">Let\'s get to know you :)</string>
     <string name="name">What\'s your name?</string>
-    <string name="email">eMail address?</string>
+    <string name="email">Email address?</string>
     <string name="password">Password to keep you safe?</string>
     <string name="register">Sign me up!</string>
 </resources>
