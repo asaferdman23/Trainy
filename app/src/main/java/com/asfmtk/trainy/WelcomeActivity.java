@@ -19,23 +19,21 @@ public class WelcomeActivity extends AppCompatActivity {
         setContentView(R.layout.welcome_activity);
 
         coachPage = (Button) findViewById(R.id.coach_button);
-        coachRegistryPage();
         trainerPage = (Button) findViewById(R.id.trainer_button);
-        trainerRegistryPage();
+        RegistryPage();
+//        trainerRegistryPage();
     }
 
-    public void coachRegistryPage() {
+    public void RegistryPage() {
         coachPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(WelcomeActivity.this, CoachRegister.class);
                 startActivity(intent);
-                Log.i("TAG", "coachButtonLog");
+                Log.i("TAG", "registryButtonLog");
             }
         });
-    }
 
-    public void trainerRegistryPage() {
         trainerPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
