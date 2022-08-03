@@ -30,7 +30,7 @@ public class WelcomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(WelcomeActivity.this, CoachRegister.class);
                 startActivity(intent);
-                Log.i("TAG", "registryButtonLog");
+                Log.i(Utils.TAG, "registryButtonLog");
             }
         });
 
@@ -39,7 +39,7 @@ public class WelcomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(WelcomeActivity.this, TrainerRegister.class);
                 startActivity(intent);
-                Log.i("TAG", "trainerButtonLog");
+                Log.i(Utils.TAG, "trainerButtonLog");
             }
         });
     }
