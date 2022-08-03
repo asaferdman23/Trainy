@@ -45,6 +45,7 @@
         android:paddingBottom="5dp"
         android:paddingTop="5dp"
         android:hint="@string/name"
+        style="@style/edit_text_theme"
         android:background="@drawable/custom_input"
         android:textSize="21sp"
         android:drawablePadding="10dp"

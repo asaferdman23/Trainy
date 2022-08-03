@@ -9,15 +9,15 @@ import android.widget.Button;
 
 public class CoachRegister extends AppCompatActivity {
 
-//    Button coachSignMe;
-//
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.coach_register_layout);
-//
-//        coachSignMe = (Button) findViewById(R.id.coach_sign_up);
-//
+    Button coachSignMe;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.coach_register_layout);
+
+        coachSignMe = (Button) findViewById(R.id.coach_sign_up);
+
 //        public void SignUpCoach() {
 //            coachSignMe.setOnClickListener(new View.OnClickListener() {
 //                @Override
@@ -26,6 +26,6 @@ public class CoachRegister extends AppCompatActivity {
 //                }
 //            });
 //        }
-//
-//    }
+
+    }
 }
