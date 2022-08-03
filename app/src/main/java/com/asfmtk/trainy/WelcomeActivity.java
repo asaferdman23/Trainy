@@ -21,7 +21,6 @@ public class WelcomeActivity extends AppCompatActivity {
         coachPage = (Button) findViewById(R.id.coach_button);
         trainerPage = (Button) findViewById(R.id.trainer_button);
         RegistryPage();
-//        trainerRegistryPage();
     }
 
     public void RegistryPage() {

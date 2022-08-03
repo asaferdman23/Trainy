@@ -42,7 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="152dp"
-        android:backgroundTint="@color/light_orange"
+        android:backgroundTint="@color/light_gold"
         android:text="@string/im_coach"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -54,7 +54,7 @@
 
     <Button
         android:id="@+id/trainer_button"
-        android:backgroundTint="@color/light_orange"
+        android:backgroundTint="@color/light_gold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/im_trainer"
