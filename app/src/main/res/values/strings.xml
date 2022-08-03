@@ -7,8 +7,11 @@
     <string name="whats_up_coach">So coach, what\'s up?</string>
     <string name="whats_up_trainer">So trainer, what\'s up?</string>
     <string name="know_you">Let\'s get to know you :)</string>
-    <string name="name">What\'s your name?</string>
-    <string name="email">Email address?</string>
-    <string name="password">Password to keep you safe?</string>
+    <string name="register_input_email">Email address?</string>
+    <string name="login_input_email">Email address</string>
+    <string name="register_input_password">Password to keep you safe?</string>
+    <string name="login_input_password">Password</string>
     <string name="register">Sign me up!</string>
+    <string name="login_button_text">Login</string>
+    <string name="register_input_name">What\'s your name?</string>
 </resources>
