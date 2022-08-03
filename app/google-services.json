@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "908179069359",
+    "project_id": "trainy-asfmtk23",
+    "storage_bucket": "trainy-asfmtk23.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:908179069359:android:2e713c959b5e3220af775a",
+        "android_client_info": {
+          "package_name": "com.asfmtk.trainy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "908179069359-0kt0e02bvifj92eu374n72d1uji3gi6v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtnCX0bJzwefuvBuTqAWs3QJtGJFudAbA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "908179069359-0kt0e02bvifj92eu374n72d1uji3gi6v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

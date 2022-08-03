@@ -7,8 +7,8 @@
     tools:context=".CoachLogin"
     android:background="@drawable/light_white">
 
-
     <ImageView
+        android:id="@+id/coach_app_logo"
         android:layout_width="216dp"
         android:layout_height="234dp"
         android:src="@drawable/logo_transparent"
