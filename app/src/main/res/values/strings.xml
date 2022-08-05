@@ -15,4 +15,12 @@
     <string name="login_button_text">Login</string>
     <string name="register_input_name">What\'s your name?</string>
     <string name="remember_me_text">Remember me!</string>
+    <string name="phone_number_input">Phone Number</string>
+    <string name="send_me_otp">Send Me</string>
+    <string name="please_enter_number_text">Please enter your phone number</string>
+    <string name="under_please_enter_number_text">We will send you a code soon!</string>
+    <string name="verify_otp">Verify</string>
+    <string name="enter_otp_code">Enter Code</string>
+    <string name="please_enter_code_text">Please enter the code</string>
+    <string name="empty_phone_input">Please enter valid phone number</string>
 </resources>

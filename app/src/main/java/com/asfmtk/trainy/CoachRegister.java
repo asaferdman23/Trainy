@@ -20,11 +20,12 @@ public class CoachRegister extends AppCompatActivity {
          SignUpCoach();
     }
 
+
     public void SignUpCoach() {
         coachSignMe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(CoachRegister.this, CoachLogin.class);
+                Intent intent = new Intent(CoachRegister.this, OtpInput.class);
                 startActivity(intent);
             }
         });
