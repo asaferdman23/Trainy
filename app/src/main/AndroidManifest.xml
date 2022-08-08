@@ -20,8 +20,14 @@
             android:name=".OtpVerify"
             android:exported="false" />
         <activity
-            android:name=".CoachLogin"
-            android:exported="false" />
+            android:name=".MainLogin"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".TrainerLogin"
             android:exported="false" />
@@ -33,13 +39,7 @@
             android:exported="false" />
         <activity
             android:name=".WelcomeActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false" />
     </application>
 
 </manifest>

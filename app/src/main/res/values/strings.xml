@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Trainy</string>
     <string name="welcome">Hi and welcome to Trainy!</string>
+    <string name="still_no_account">Register here!</string>
     <string name="coach_or_trainer">So, are you a coach or a trainer?</string>
     <string name="im_coach">3... 2... 1... GO! Coach</string>
     <string name="im_trainer">Efficient my gains! Trainer</string>
@@ -14,7 +15,7 @@
     <string name="register">Sign me up!</string>
     <string name="login_button_text">Login</string>
     <string name="register_input_name">What\'s your name?</string>
-    <string name="remember_me_text">Remember me!</string>
+    <string name="remember_me_text">Remember me</string>
     <string name="phone_number_input">Phone Number</string>
     <string name="send_me_otp">Send Me</string>
     <string name="please_enter_number_text">Please enter your phone number</string>

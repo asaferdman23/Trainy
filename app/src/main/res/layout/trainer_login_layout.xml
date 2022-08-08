@@ -68,27 +68,18 @@
         tools:ignore="MissingConstraints" />
 
     <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.327"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.626"
-        tools:ignore="MissingConstraints,OnClick,UsingOnClickInXml" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/remember_me_checkbox"
+        android:layout_width="136dp"
+        android:layout_height="27dp"
+        android:buttonTint="@color/light_gold"
         android:text="@string/remember_me_text"
-        android:textColor="@color/light_gold"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.58"
+        app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.634"
+        app:layout_constraintVertical_bias="0.647"
         tools:ignore="MissingConstraints,OnClick,UsingOnClickInXml" />
 
     <Button

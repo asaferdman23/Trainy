@@ -54,7 +54,6 @@
         android:hint="@string/phone_number_input"
         android:inputType="phone"
         android:paddingTop="5dp"
-        android:paddingEnd="25dp"
         android:paddingBottom="10dp"
         android:textColorHint="@color/gray"
         android:textSize="21sp"
