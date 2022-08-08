@@ -11,6 +11,7 @@ import android.widget.TextView;
 public class MainLogin extends AppCompatActivity {
 
     TextView mRegister;
+    TextView mForgotPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +19,7 @@ public class MainLogin extends AppCompatActivity {
         setContentView(R.layout.main_login);
 
         mRegister = (TextView) findViewById(R.id.register);
+        mForgotPassword = (TextView) findViewById(R.id.forgot_password);
 
         mRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -27,5 +29,15 @@ public class MainLogin extends AppCompatActivity {
                 Log.i(Utils.TAG, "register_text_click");
             }
         });
+
+//        mForgotPassword.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(MainLogin.this, some password recovery .class)
+//                startActivity(intent);
+//                Log.i(Utils.TAG, "forgot_password");
+//            }
+//        });
+
     }
 }

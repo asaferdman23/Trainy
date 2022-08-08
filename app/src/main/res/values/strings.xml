@@ -2,6 +2,7 @@
     <string name="app_name">Trainy</string>
     <string name="welcome">Hi and welcome to Trainy!</string>
     <string name="still_no_account">Register here!</string>
+    <string name="forgot_your_password">Forgot your password?</string>
     <string name="coach_or_trainer">So, are you a coach or a trainer?</string>
     <string name="im_coach">3... 2... 1... GO! Coach</string>
     <string name="im_trainer">Efficient my gains! Trainer</string>
