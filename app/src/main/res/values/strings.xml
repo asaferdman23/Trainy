@@ -12,6 +12,7 @@
     <string name="register_input_email">Email address?</string>
     <string name="login_input_email">Email address</string>
     <string name="register_input_password">Password to keep you safe?</string>
+    <string name="second_register_input_password">Type the same password again</string>
     <string name="login_input_password">Password</string>
     <string name="register">Sign me up!</string>
     <string name="login_button_text">Login</string>

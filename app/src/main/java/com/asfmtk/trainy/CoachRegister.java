@@ -14,25 +14,36 @@ import com.google.firebase.auth.FirebaseAuth;
 public class CoachRegister extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
-    private EditText coachName;
-    private EditText coachEmail;
-    private EditText coachPassword;
+    private FirebaseAuth mUser;
+    private EditText coachName, coachEmail, coachPassword;
     Button coachSignMe;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.coach_register_layout);
-        coachSignMe = (Button) findViewById(R.id.coach_sign_up);
+
         coachName = (EditText) findViewById(R.id.coach_name_box);
         coachEmail = (EditText) findViewById(R.id.coach_email_box);
         coachPassword = (EditText) findViewById(R.id.coach_password_box);
+        coachSignMe = (Button) findViewById(R.id.coach_sign_up);
 
         mAuth = FirebaseAuth.getInstance();
+        mUser = mAuth.getInstance();
+
+        coachSignMe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                performAuth();
+
+                Intent intent = new Intent(CoachRegister.this, OtpInput.class);
+                startActivity(intent);
+            }
+        });
     }
 
-    public void onClick(View v) {
-
+    private void performAuth() {
         String coachNameInputString = coachName.getText().toString();
         String coachEmailInputString = coachEmail.getText().toString().trim();
         String coachPasswordInputString = coachPassword.getText().toString();
@@ -66,13 +77,5 @@ public class CoachRegister extends AppCompatActivity {
             coachPassword.requestFocus();
             return;
         }
-
-        coachSignMe.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(CoachRegister.this, OtpInput.class);
-                startActivity(intent);
-            }
-        });
     }
 }
