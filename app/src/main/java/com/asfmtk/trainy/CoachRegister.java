@@ -33,35 +33,35 @@ public class CoachRegister extends AppCompatActivity {
 
     public void onClick(View v) {
 
-        String sCoachName = coachName.getText().toString();
-        String sCoachEmail = coachEmail.getText().toString().trim();
-        String sCoachPassword = coachPassword.getText().toString();
+        String coachNameInputString = coachName.getText().toString();
+        String coachEmailInputString = coachEmail.getText().toString().trim();
+        String coachPasswordInputString = coachPassword.getText().toString();
 
-        if (sCoachName.isEmpty()) {
+        if (coachNameInputString.isEmpty()) {
             coachName.setError("Full name is required!");
             coachName.requestFocus();
             return;
         }
 
-        if (sCoachEmail.isEmpty()) {
+        if (coachEmailInputString.isEmpty()) {
             coachEmail.setError("Email is required!");
             coachEmail.requestFocus();
             return;
         }
 
-        if (!Patterns.EMAIL_ADDRESS.matcher(sCoachEmail).matches()) {
+        if (!Patterns.EMAIL_ADDRESS.matcher(coachEmailInputString).matches()) {
             coachEmail.setError("Please provide valid email!");
             coachEmail.requestFocus();
             return;
         }
 
-        if (sCoachPassword.isEmpty()) {
+        if (coachPasswordInputString.isEmpty()) {
             coachPassword.setError("Password is required1");
             coachPassword.requestFocus();
             return;
         }
 
-        if (sCoachPassword.length() < 6) {
+        if (coachPasswordInputString.length() < 6) {
             coachPassword.setError("Minimum password length should be 6 characters!");
             coachPassword.requestFocus();
             return;

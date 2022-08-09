@@ -20,10 +20,10 @@ public class WelcomeActivity extends AppCompatActivity {
 
         coachPage = (Button) findViewById(R.id.coach_button);
         trainerPage = (Button) findViewById(R.id.trainer_button);
-        SpecificRegistryPage();
+        specificRegistryPage();
     }
 
-    public void SpecificRegistryPage() {
+    public void specificRegistryPage() {
         coachPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
