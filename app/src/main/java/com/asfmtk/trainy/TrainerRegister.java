@@ -8,12 +8,15 @@ import android.view.View;
 import android.widget.Button;
 
 public class TrainerRegister extends AppCompatActivity {
+    //variables declarations
     Button mSignUpButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.trainer_register_layout);
+
+        //variables initialization
         mSignUpButton =findViewById(R.id.trainer_sign_up);
         signUpButton();
     }

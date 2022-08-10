@@ -13,6 +13,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class CoachRegister extends AppCompatActivity {
 
+    //declarations for firebase variable, inputs from user and sign in button
     private FirebaseAuth mAuth;
     private FirebaseAuth mUser;
     private EditText coachName, coachEmail, coachPassword;
@@ -23,11 +24,13 @@ public class CoachRegister extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.coach_register_layout);
 
+        //page variables initialization
         coachName = (EditText) findViewById(R.id.coach_name_box);
         coachEmail = (EditText) findViewById(R.id.coach_email_box);
         coachPassword = (EditText) findViewById(R.id.coach_password_box);
         coachSignMe = (Button) findViewById(R.id.coach_sign_up);
 
+        //firebase variables initialization
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getInstance();
 
@@ -35,14 +38,18 @@ public class CoachRegister extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                //if conditions are needed here
+                //calling the method that check all the terms
                 performAuth();
 
+                //what happens after clicking sign up button
                 Intent intent = new Intent(CoachRegister.this, OtpInput.class);
                 startActivity(intent);
             }
         });
     }
 
+    //the actual method that checks the terms
     private void performAuth() {
         String coachNameInputString = coachName.getText().toString();
         String coachEmailInputString = coachEmail.getText().toString().trim();

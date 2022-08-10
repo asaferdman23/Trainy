@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 public class MainLogin extends AppCompatActivity {
 
+    //clickable text variables declarations
     TextView mRegister;
     TextView mForgotPassword;
 
@@ -18,9 +19,11 @@ public class MainLogin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_login);
 
+        //clickable text initialization
         mRegister = (TextView) findViewById(R.id.register);
         mForgotPassword = (TextView) findViewById(R.id.forgot_password);
 
+        //initiate what happens when clicking on Register text
         mRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
