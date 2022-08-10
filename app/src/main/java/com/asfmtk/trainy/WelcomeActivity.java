@@ -31,7 +31,7 @@ public class WelcomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //sends to coach register page
-                Intent intent = new Intent(WelcomeActivity.this, CoachRegister.class);
+                Intent intent = new Intent(WelcomeActivity.this, RegisterClass.class);
                 startActivity(intent);
                 Log.i(Utils.TAG, "coach_registry_button_log");
             }

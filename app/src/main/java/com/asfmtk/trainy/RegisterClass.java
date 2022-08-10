@@ -2,45 +2,48 @@ package com.asfmtk.trainy;
 
 import static com.asfmtk.trainy.Utils.USERS;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.util.Patterns;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
+
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.firestore.auth.User;
+
 
 import java.util.Objects;
 
-public class CoachRegister extends AppCompatActivity {
+public class RegisterClass extends AppCompatActivity {
 
     //declarations for firebase variable, inputs from user and sign in button
     private FirebaseAuth mAuth;
-    private FirebaseUser currentUser;
-    private FirebaseAuth mUser;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference ourUsers = database.getReference("User");
+    DatabaseReference mOurUsers;
     private EditText coachName, coachEmail, coachPasswordFirst, coachPasswordSecond;
     Button coachSignMe;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.coach_register_layout);
-
+        setContentView(R.layout.register_layout);
+        //Spinner implementation
+        Spinner userTypeSpinner = findViewById(R.id.editTeamSpinner);
+        ArrayAdapter<CharSequence> userTypeSpinnerAdapter = ArrayAdapter.createFromResource(this, R.array.type_users_spinner_array, android.R.layout.simple_spinner_item);
+        userTypeSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        userTypeSpinner.setAdapter(userTypeSpinnerAdapter);
+        userTypeSpinner.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
         //page variables initialization
         coachName = (EditText) findViewById(R.id.coach_name_box);
         coachEmail = (EditText) findViewById(R.id.coach_email_box);
@@ -49,9 +52,8 @@ public class CoachRegister extends AppCompatActivity {
         coachSignMe = (Button) findViewById(R.id.coach_sign_up);
 
 
-
         mAuth = FirebaseAuth.getInstance();
-        ourUsers = FirebaseDatabase.getInstance().getReference(USERS);
+        mOurUsers = FirebaseDatabase.getInstance().getReference(USERS);
         //firebase variables initialization
 
 
@@ -60,6 +62,7 @@ public class CoachRegister extends AppCompatActivity {
             public void onClick(View v) {
 
                 //calling the method that check all the terms
+                String userType = userTypeSpinner.getSelectedItem().toString();
                 String coachNameInputString = coachName.getText().toString();
                 String coachEmailInputString = coachEmail.getText().toString();
                 String coachPasswordInputStringFirst = coachPasswordFirst.getText().toString();
@@ -113,42 +116,19 @@ public class CoachRegister extends AppCompatActivity {
 //                    coachPassword.requestFocus();
                     return;
                 }
-                mAuth.createUserWithEmailAndPassword(coachEmailInputString, coachPasswordInputStringFirst)
-                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful()) {
-                                    // Sign in success, update UI with the signed-in user's information
-                                    Log.d(Utils.TAG, "createUserWithEmailAndPassword:success");
-                                    FirebaseUser user = mAuth.getCurrentUser();
-                                    //what happens after clicking sign up button
-                                    Intent intent = new Intent(CoachRegister.this, OtpInput.class);
-                                    startActivity(intent);
-                                    //updateUI(user);
-                                } else {
-                                    // If sign in fails, display a message to the user.
-                                    Log.w(Utils.TAG, "createUserWithEmail:failure", task.getException());
-                                    Toast.makeText(getApplicationContext(), "Authentication failed.",
-                                            Toast.LENGTH_SHORT).show();
-                                    //updateUI(null);
-                                }
-
-                            }
-                        });
                 mAuth.createUserWithEmailAndPassword(coachEmailInputString, coachPasswordInputStringFirst).addOnCompleteListener((Task<AuthResult> task) -> {
-
                     if (task.isSuccessful()) {
-                        Users user = new Users(coachEmail.getText().toString(), coachPasswordFirst.getText().toString(), );
+                        Users user = new Users(coachEmail.getText().toString(), coachPasswordFirst.getText().toString(),userType);
                         registerUser(user);
                     } else {
-                        Toast.makeText(CoachRegister.this, "Error" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegisterClass.this, "Error" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
             }
 
             private void registerUser(Users user) {
-                ourUsers.child(Objects.requireNonNull(mAuth.getCurrentUser()).getUid()).setValue(user);
-                Toast.makeText(CoachRegister.this, "User Created", Toast.LENGTH_SHORT).show();
+                mOurUsers.child(Objects.requireNonNull(mAuth.getCurrentUser()).getUid()).setValue(user);
+                Toast.makeText(RegisterClass.this, "User Created", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(getApplicationContext(), OtpInput.class));
             }
         });

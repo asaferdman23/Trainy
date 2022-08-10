@@ -22,7 +22,7 @@
             android:name=".OtpVerify"
             android:exported="false" />
         <activity
-            android:name=".MainLogin"
+            android:name=".LoginClass"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,10 +34,7 @@
             android:name=".TrainerLogin"
             android:exported="false" />
         <activity
-            android:name=".TrainerRegister"
-            android:exported="false" />
-        <activity
-            android:name=".CoachRegister"
+            android:name=".RegisterClass"
             android:exported="false" />
         <activity
             android:name=".WelcomeActivity"
