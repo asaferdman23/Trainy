@@ -25,7 +25,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Objects;
 
-public class RegisterClass extends AppCompatActivity {
+public class RegisterClass extends AppCompatActivity implements AdapterView.OnItemSelectedListener  {
 
     //declarations for firebase variable, inputs from user and sign in button
     private FirebaseAuth mAuth;
@@ -132,5 +132,15 @@ public class RegisterClass extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), OtpInput.class));
             }
         });
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
     }
 }
