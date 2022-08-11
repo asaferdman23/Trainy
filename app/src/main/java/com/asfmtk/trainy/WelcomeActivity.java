@@ -22,11 +22,11 @@ public class WelcomeActivity extends AppCompatActivity {
         //buttons initialization
         coachPage = (Button) findViewById(R.id.coach_button);
         trainerPage = (Button) findViewById(R.id.trainer_button);
-        specificRegistryPage();
+        registryPage();
     }
 
     //method that contains both buttons intentions
-    public void specificRegistryPage() {
+    public void registryPage() {
         coachPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -34,16 +34,6 @@ public class WelcomeActivity extends AppCompatActivity {
                 Intent intent = new Intent(WelcomeActivity.this, RegisterClass.class);
                 startActivity(intent);
                 Log.i(Utils.TAG, "coach_registry_button_log");
-            }
-        });
-
-        trainerPage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //sends to trainer register page
-                Intent intent = new Intent(WelcomeActivity.this, TrainerRegister.class);
-                startActivity(intent);
-                Log.i(Utils.TAG, "trainer_registry_button_log");
             }
         });
     }
