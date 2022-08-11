@@ -45,7 +45,7 @@ public class OtpInput extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String otpNumberInputText = mOtpNumberInput.getText().toString();
-                if(otpNumberInputText.length() < 10) {
+                if(otpNumberInputText.length() <= 10) {
                     sendVerificationCodeToUser(otpNumberInputText);
                 } else {
                     Toast.makeText(getApplicationContext(),"Phone number too short",Toast.LENGTH_SHORT).show();
@@ -58,7 +58,7 @@ public class OtpInput extends AppCompatActivity {
                 PhoneAuthOptions.newBuilder(mAuth)
                         .setPhoneNumber("+972" + phoneNo)       // Phone number to verify
                         .setTimeout(10L, TimeUnit.SECONDS) // Timeout and unit
-                        .setActivity((Activity) TaskExecutors.MAIN_THREAD)                 // Activity (for callback binding)
+                        .setActivity(OtpVerify.class)                 // Activity (for callback binding)
                         .build();
         PhoneAuthProvider.verifyPhoneNumber(options);
     }

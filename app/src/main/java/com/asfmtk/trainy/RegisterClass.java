@@ -5,6 +5,7 @@ import static com.asfmtk.trainy.Utils.USERS;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.nfc.Tag;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -39,7 +40,7 @@ public class RegisterClass extends AppCompatActivity implements AdapterView.OnIt
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register_layout);
         //Spinner implementation
-        Spinner userTypeSpinner = findViewById(R.id.editTeamSpinner);
+        Spinner userTypeSpinner = findViewById(R.id.edit_user_spinner);
         ArrayAdapter<CharSequence> userTypeSpinnerAdapter = ArrayAdapter.createFromResource(this, R.array.type_users_spinner_array, android.R.layout.simple_spinner_item);
         userTypeSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         userTypeSpinner.setAdapter(userTypeSpinnerAdapter);
@@ -50,6 +51,7 @@ public class RegisterClass extends AppCompatActivity implements AdapterView.OnIt
         coachPasswordFirst = (EditText) findViewById(R.id.coach_password_box1);
         coachPasswordSecond = (EditText) findViewById(R.id.coach_password_box2);
         coachSignMe = (Button) findViewById(R.id.coach_sign_up);
+
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -125,7 +127,6 @@ public class RegisterClass extends AppCompatActivity implements AdapterView.OnIt
                     }
                 });
             }
-
             private void registerUser(Users user) {
                 mOurUsers.child(Objects.requireNonNull(mAuth.getCurrentUser()).getUid()).setValue(user);
                 Toast.makeText(RegisterClass.this, "User Created", Toast.LENGTH_SHORT).show();
@@ -134,11 +135,17 @@ public class RegisterClass extends AppCompatActivity implements AdapterView.OnIt
         });
     }
 
+
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
+        String selectedItemText = (String) adapterView.getItemAtPosition(i);
+        // If user change the default selection
+        // First item is disable and it is used for hint
+        if (i > 0) {
+            // Notify the selected item text
+            Log.i(Utils.TAG, "Selected : " + selectedItemText);
+        }
     }
-
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
 

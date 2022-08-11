@@ -29,7 +29,7 @@ public class LoginClass extends AppCompatActivity {
     private DatabaseReference mOurUsers = FirebaseDatabase.getInstance().getReference(USERS);
     //clickable text variables declarations
     private EditText mEmail, mPassword;
-    TextView mRegister;
+    Button mRegister;
     TextView mForgotPassword;
     Button mLoginBtn;
     private CheckBox mRememberMeCheckBox;
@@ -44,7 +44,7 @@ public class LoginClass extends AppCompatActivity {
         setContentView(R.layout.login_layout);
 
         //clickable text initialization
-        mRegister = (TextView) findViewById(R.id.register);
+        mRegister = findViewById(R.id.register);
         mForgotPassword = (TextView) findViewById(R.id.forgot_password);
         mEmail = findViewById(R.id.login_email_box);
         mPassword = findViewById(R.id.login_password_box);
