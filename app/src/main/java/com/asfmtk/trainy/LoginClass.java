@@ -56,7 +56,7 @@ public class LoginClass extends AppCompatActivity {
         mRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginClass.this, WelcomeActivity.class);
+                Intent intent = new Intent(LoginClass.this, RegisterClass.class);
                 startActivity(intent);
                 Log.i(Utils.TAG, "register_text_click");
             }
@@ -78,6 +78,7 @@ public class LoginClass extends AppCompatActivity {
             }
         });
     }
+
 
     private void loginUser(String email, String password) {
         Log.i(Utils.TAG, "Login Activity");
