@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.nfc.Tag;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -63,62 +64,54 @@ public class RegisterClass extends AppCompatActivity implements AdapterView.OnIt
             @Override
             public void onClick(View v) {
 
-                //calling the method that check all the terms
+                //Calling the method that check all the terms
                 String userType = userTypeSpinner.getSelectedItem().toString();
-                String coachNameInputString = coachName.getText().toString();
-                String coachEmailInputString = coachEmail.getText().toString();
-                String coachPasswordInputStringFirst = coachPasswordFirst.getText().toString();
-                String coachPasswordInputStringSecond = coachPasswordSecond.getText().toString();
+                String nameInputString = coachName.getText().toString();
+                String emailInputString = coachEmail.getText().toString();
+                String passwordInputStringFirst = coachPasswordFirst.getText().toString();
+                String passwordInputStringSecond = coachPasswordSecond.getText().toString();
 
-                if (coachNameInputString.isEmpty()) {
+                if (nameInputString.isEmpty()) {
                     Log.i(Utils.TAG, "name is empty");
                     coachName.setError("Full name is required!");
-//                    coachName.requestFocus();
+                    coachName.requestFocus();
                     return;
                 }
-
-                if (coachEmailInputString.isEmpty()) {
+                if (emailInputString.isEmpty()) {
                     Log.i(Utils.TAG, "email is empty");
                     coachEmail.setError("Email is required!");
-//                    coachEmail.requestFocus();
+                    coachEmail.requestFocus();
                     return;
                 }
 
-//                if (!Patterns.EMAIL_ADDRESS.matcher(coachEmailInputString).matches()) {
-//                    Log.i(Utils.TAG, "email doesnt match pattern");
-//                    coachEmail.setError("Please provide valid email!");
-//                    coachEmail.requestFocus();
-//                    return;
-//                }
+               if (!Patterns.EMAIL_ADDRESS.matcher(emailInputString).matches()) {
+                    Log.i(Utils.TAG, "email doesnt match pattern");
+                    coachEmail.setError("Please provide valid email!");
+                    coachEmail.requestFocus();
+                    return;
+                }
 
-                if (coachPasswordInputStringFirst.isEmpty()) {
+                if (passwordInputStringFirst.isEmpty()) {
                     Log.i(Utils.TAG, "first password is empty");
                     coachPasswordFirst.setError("Password is required1");
 //                    coachPassword.requestFocus();
                     return;
                 }
+                if (!passwordInputStringFirst.equals(passwordInputStringSecond)) {
+                    Log.i(Utils.TAG, "The password are not even!");
+                    coachPasswordFirst.setError("Password is required1");
+//                    coachPassword.requestFocus();
+                    return;
+                }
 
-                if (coachPasswordInputStringFirst.length() < 6) {
+                if (passwordInputStringFirst.length() < 6) {
                     Log.i(Utils.TAG, "first password is too short");
                     coachPasswordFirst.setError("Password is required1");
 //                    coachPassword.requestFocus();
                     return;
                 }
 
-                if (coachPasswordInputStringSecond.isEmpty()) {
-                    Log.i(Utils.TAG, "second password is empty");
-                    coachPasswordSecond.setError("Minimum password length should be 6 characters!");
-//                    coachPassword.requestFocus();
-                    return;
-                }
-
-                if (coachPasswordInputStringSecond.length() < 6) {
-                    Log.i(Utils.TAG, "second password is too short");
-                    coachPasswordSecond.setError("Minimum password length should be 6 characters!");
-//                    coachPassword.requestFocus();
-                    return;
-                }
-                mAuth.createUserWithEmailAndPassword(coachEmailInputString, coachPasswordInputStringFirst).addOnCompleteListener((Task<AuthResult> task) -> {
+                mAuth.createUserWithEmailAndPassword(emailInputString, passwordInputStringFirst).addOnCompleteListener((Task<AuthResult> task) -> {
                     if (task.isSuccessful()) {
                         Users user = new Users(coachEmail.getText().toString(), coachPasswordFirst.getText().toString(),userType);
                         registerUser(user);
@@ -130,24 +123,16 @@ public class RegisterClass extends AppCompatActivity implements AdapterView.OnIt
             private void registerUser(Users user) {
                 mOurUsers.child(Objects.requireNonNull(mAuth.getCurrentUser()).getUid()).setValue(user);
                 Toast.makeText(RegisterClass.this, "User Created", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getApplicationContext(), OtpInput.class));
+                // Im changing the intent because the OTP activity is not ready for testing yet
+                startActivity(new Intent(getApplicationContext(), LoginClass.class));
             }
         });
     }
 
-
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        String selectedItemText = (String) adapterView.getItemAtPosition(i);
-        // If user change the default selection
-        // First item is disable and it is used for hint
-        if (i > 0) {
-            // Notify the selected item text
-            Log.i(Utils.TAG, "Selected : " + selectedItemText);
-        }
     }
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
-
     }
 }

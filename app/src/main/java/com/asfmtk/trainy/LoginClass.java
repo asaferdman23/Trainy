@@ -68,12 +68,13 @@ public class LoginClass extends AppCompatActivity {
                 final String email = mEmail.getText().toString().trim();
                 final String password = mPassword.getText().toString().trim();
                 if (email.isEmpty() || password.isEmpty()) {
-                    Toast.makeText(LoginClass.this, "Please enter your email or password", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginClass.this, R.string.one_detail_missing, Toast.LENGTH_SHORT).show();
                 } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                    Toast.makeText(LoginClass.this, "Please re-enter your email", Toast.LENGTH_SHORT).show();
                     mEmail.setError("Valid email is required");
                 } else {
                     LoginClass.this.loginUser(email, password);
+                    Intent intent =new Intent(getApplicationContext(),MainScreen.class);
+                    startActivity(intent);
                 }
             }
         });

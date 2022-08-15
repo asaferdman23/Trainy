@@ -58,7 +58,7 @@ public class OtpInput extends AppCompatActivity {
                 PhoneAuthOptions.newBuilder(mAuth)
                         .setPhoneNumber("+972" + phoneNo)       // Phone number to verify
                         .setTimeout(10L, TimeUnit.SECONDS) // Timeout and unit
-                        .setActivity(OtpVerify.class)                 // Activity (for callback binding)
+                        .setActivity(this)                 // Activity (for callback binding)
                         .build();
         PhoneAuthProvider.verifyPhoneNumber(options);
     }
