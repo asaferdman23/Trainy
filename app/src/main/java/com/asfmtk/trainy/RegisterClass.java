@@ -54,7 +54,6 @@ public class RegisterClass extends AppCompatActivity implements AdapterView.OnIt
         coachSignMe = (Button) findViewById(R.id.coach_sign_up);
 
 
-
         mAuth = FirebaseAuth.getInstance();
         mOurUsers = FirebaseDatabase.getInstance().getReference(USERS);
         //firebase variables initialization
@@ -131,8 +130,11 @@ public class RegisterClass extends AppCompatActivity implements AdapterView.OnIt
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+//        String userTypeChoice = adapterView.getItemAtPosition(i).toString();
+//        Toast.makeText(adapterView.getContext(), "A " + userTypeChoice + " ah? Nice!", Toast.LENGTH_SHORT).show();
     }
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
+
     }
 }
